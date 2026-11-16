@@ -1,0 +1,14 @@
+{
+    "_note": "Placeholder. Replace TEAM_ID_PENDING with the Where RU Apple Developer Team ID and leave the bundle id as the approved one. Regenerate before enabling Universal Links.",
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "TEAM_ID_PENDING.com.example.app",
+                "paths": [
+                    "*"
+                ]
+            }
+        ]
+    }
+}

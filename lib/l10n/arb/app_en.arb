@@ -1,0 +1,67 @@
+{
+  "@@locale": "en",
+  "home": "Home",
+  "findSomeone": "FIND SOMEONE",
+  "findSomeoneSubtitle": "Search for people around you and start your next meeting.",
+  "findSomeoneTitle": "Find Someone",
+  "meetingHistory": "Meeting history",
+  "seeAll": "See all",
+  "levelLabel": "Level {level}",
+  "@levelLabel": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "xpValue": "{xp} XP",
+  "@xpValue": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "coinsValue": "{coins} Coins",
+  "@coinsValue": {
+    "placeholders": {
+      "coins": {
+        "type": "int"
+      }
+    }
+  },
+  "xpToNextLevel": "{xp} XP to next level",
+  "@xpToNextLevel": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "homeGreeting": "Hi, {name}!",
+  "@homeGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifications": "Notifications",
+  "notificationsEmpty": "No new notifications yet.",
+  "meetings": "Meetings",
+  "profile": "Profile",
+  "retry": "Retry",
+  "somethingWentWrong": "Something went wrong. Please try again.",
+  "searchPeopleHint": "Search by name or interest",
+  "noPeopleNearby": "No one nearby yet. Try a different search.",
+  "kmAway": "{distance} km away",
+  "@kmAway": {
+    "placeholders": {
+      "distance": {
+        "type": "double"
+      }
+    }
+  },
+  "noMeetingsYet": "Your meetings will show up here.",
+  "backendNotConnected": "This action will be available once the backend is connected."
+}

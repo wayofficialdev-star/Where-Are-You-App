@@ -1,0 +1,9 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+// The staging build configurations also use this file (see project.pbxproj), so
+// the Google plist is resolved per configuration instead of per file.
+GOOGLESERVICE_INFO_PLIST = ${PROJECT_DIR}/Runner/development/GoogleService-Info.plist
+GOOGLESERVICE_INFO_PLIST[config=Debug-staging] = ${PROJECT_DIR}/Runner/staging/GoogleService-Info.plist
+GOOGLESERVICE_INFO_PLIST[config=Profile-staging] = ${PROJECT_DIR}/Runner/staging/GoogleService-Info.plist
+GOOGLESERVICE_INFO_PLIST[config=Release-staging] = ${PROJECT_DIR}/Runner/staging/GoogleService-Info.plist

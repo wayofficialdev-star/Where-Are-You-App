@@ -1,0 +1,23 @@
+{
+    "name": "Where RU",
+    "short_name": "Where RU",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#F7F8FC",
+    "theme_color": "#3D7BFF",
+    "description": "Where RU - find people around you and start your next meeting.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

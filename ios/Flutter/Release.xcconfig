@@ -1,0 +1,5 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+#include "Generated.xcconfig"
+
+// Default (non-flavoured) configuration falls back to the production plist.
+GOOGLESERVICE_INFO_PLIST = ${PROJECT_DIR}/Runner/production/GoogleService-Info.plist
