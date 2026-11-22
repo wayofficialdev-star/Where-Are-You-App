@@ -12,6 +12,12 @@ class Meeting with _$Meeting {
     required String activity,
     required DateTime date,
     required String location,
+
+    /// Approximate distance in kilometres, when known.
+    @Default(0) double distanceKm,
+
+    /// Rating the current user gave (0 - 5), when known.
+    @Default(0) double rating,
   }) = _Meeting;
 
   factory Meeting.fromJson(Map<String, dynamic> json) =>

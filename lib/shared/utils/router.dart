@@ -1,3 +1,5 @@
+import 'package:app/features/auth/auth.dart';
+import 'package:app/features/chat/chat.dart';
 import 'package:app/features/find_someone/find_someone.dart';
 import 'package:app/features/home/home.dart';
 import 'package:app/features/meetings/meetings.dart';
@@ -61,11 +63,24 @@ class AppRouter {
   static const String profile = 'profile';
   static const String splash = 'splash';
   static const String login = 'login';
+  static const String signUp = 'signUp';
+  static const String findSomeonePreferences = 'findSomeonePreferences';
+  static const String findSomeoneFinding = 'findSomeoneFinding';
+  static const String findSomeoneMatch = 'findSomeoneMatch';
+  static const String chat = 'chat';
+  static const String chatConversation = 'chatConversation';
 
   static const String homePath = '/';
   static const String findSomeonePath = '/find-someone';
   static const String meetingsPath = '/meetings';
   static const String profilePath = '/profile';
+  static const String loginPath = '/login';
+  static const String signUpPath = '/sign-up';
+  static const String findSomeonePreferencesPath = '/find-someone/preferences';
+  static const String findSomeoneFindingPath = '/find-someone/finding';
+  static const String findSomeoneMatchPath = '/find-someone/match';
+  static const String chatPath = '/chat';
+  static const String chatConversationPath = '/chat/:conversationId';
 
   late final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
@@ -81,10 +96,49 @@ class AppRouter {
             name: home,
             builder: (context, state) => const HomeScreen(),
           ),
+          // The four matchmaking steps are nested under the shell so the
+          // Matches destination stays available while the flow is open.
           GoRoute(
             path: findSomeonePath,
             name: findSomeone,
             builder: (context, state) => const FindSomeoneScreen(),
+            routes: [
+              GoRoute(
+                path: 'preferences',
+                name: findSomeonePreferences,
+                builder: (context, state) =>
+                    const FindSomeonePreferencesScreen(),
+              ),
+              GoRoute(
+                path: 'finding',
+                name: findSomeoneFinding,
+                builder: (context, state) => const FindSomeoneMatchingScreen(),
+              ),
+              GoRoute(
+                path: 'match',
+                name: findSomeoneMatch,
+                builder: (context, state) => const FindSomeoneResultScreen(),
+              ),
+            ],
+          ),
+          // Chat opens the conversation directly; the nested id route lets a
+          // future match or connection push its own thread onto the same
+          // screen without a second navigation system.
+          GoRoute(
+            path: chatPath,
+            name: chat,
+            builder: (context, state) => const ChatScreen(),
+            routes: [
+              GoRoute(
+                path: ':conversationId',
+                name: chatConversation,
+                builder: (context, state) => ChatScreen(
+                  conversationId:
+                      state.pathParameters['conversationId'] ??
+                      kDefaultChatConversationId,
+                ),
+              ),
+            ],
           ),
           GoRoute(
             path: meetingsPath,
@@ -97,6 +151,20 @@ class AppRouter {
             builder: (context, state) => const ProfileScreen(),
           ),
         ],
+      ),
+      // Auth flows live outside [AppShell]: they are full-screen and must not
+      // show the bottom navigation bar or rail.
+      GoRoute(
+        path: signUpPath,
+        name: signUp,
+        pageBuilder: (context, state) =>
+            fadeTransition(state, const SignUpScreen()),
+      ),
+      GoRoute(
+        path: loginPath,
+        name: login,
+        pageBuilder: (context, state) =>
+            fadeTransition(state, const LogInScreen()),
       ),
     ],
     refreshListenable: Listenable.merge([authState]),

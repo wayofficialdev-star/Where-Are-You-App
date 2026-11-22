@@ -16,21 +16,34 @@ class HomeNotifier extends _$HomeNotifier {
   @override
   Future<HomeState> build() async {
     final repository = ref.watch(homeRepoProvider);
+    return _load(repository, HomeFilter.rightNow);
+  }
 
-    return HomeState(
-      profile: await repository.fetchProfile(),
-      meetings: await repository.fetchMeetings(),
-    );
+  /// Applies a time-window selection. Presentation only: nothing is queried
+  /// until the matching backend exists.
+  void selectFilter(HomeFilter filter) {
+    final current = state.valueOrNull;
+    if (current == null || current.filter == filter) return;
+    state = AsyncData(current.copyWith(filter: filter));
   }
 
   /// Reloads the dashboard, keeping the current data visible while loading.
   Future<void> refresh() async {
     final repository = ref.read(homeRepoProvider);
-    state = await AsyncValue.guard(
-      () async => HomeState(
-        profile: await repository.fetchProfile(),
-        meetings: await repository.fetchMeetings(),
-      ),
+    final filter = state.valueOrNull?.filter ?? HomeFilter.rightNow;
+    state = await AsyncValue.guard(() => _load(repository, filter));
+  }
+
+  Future<HomeState> _load(IHomeRepository repository, HomeFilter filter) async {
+    final profile = await repository.fetchProfile();
+    final summary = await repository.fetchSummary();
+    final meetings = await repository.fetchMeetings();
+
+    return HomeState(
+      profile: profile,
+      meetings: meetings,
+      summary: summary,
+      filter: filter,
     );
   }
 }

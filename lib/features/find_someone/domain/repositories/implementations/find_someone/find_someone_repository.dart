@@ -10,40 +10,32 @@ IFindSomeoneRepository findSomeoneRepo(FindSomeoneRepoRef ref) =>
 class FindSomeoneRepository implements IFindSomeoneRepository {
   FindSomeoneRepository();
 
-  // TODO(where-ru): replace with the Supabase proximity search once the
-  // backend contract for nearby users is available.
-  static const _people = [
-    NearbyPerson(
-      id: 'person-anagha',
-      name: 'Anagha',
-      headline: 'Coffee, books and long walks',
-      distanceKm: 0.8,
-    ),
-    NearbyPerson(
-      id: 'person-arjun',
-      name: 'Arjun',
-      headline: 'Morning runs at Marine Drive',
-      distanceKm: 1.6,
-    ),
-    NearbyPerson(
-      id: 'person-meera',
-      name: 'Meera',
-      headline: 'New in Kochi, loves live music',
-      distanceKm: 2.4,
-    ),
-  ];
-
+  /// Deliberately fake: the AI matchmaking RPC does not exist yet, so this
+  /// returns one clearly labelled sample match built from the user's own
+  /// preferences. Nothing here pretends to be a real match.
+  // TODO(where-ru): replace the body with the Supabase matchmaking RPC
+  // (nearby users, availability, interests, distance, match score). The UI only
+  // depends on [IFindSomeoneRepository], so nothing else changes then.
   @override
-  Future<List<NearbyPerson>> search(String query) async {
-    final normalized = query.trim().toLowerCase();
-    if (normalized.isEmpty) return _people;
+  Future<MatchedPerson> findMatch(MatchPreferences preferences) async {
+    await Future<void>.delayed(const Duration(milliseconds: 120));
 
-    return _people
-        .where(
-          (person) =>
-              person.name.toLowerCase().contains(normalized) ||
-              person.headline.toLowerCase().contains(normalized),
-        )
-        .toList();
+    return MatchedPerson(
+      id: 'match-anagha',
+      name: 'Anagha',
+      age: 22,
+      city: 'Kochi',
+      distanceKm: 3.2,
+      activity: preferences.activity,
+      meetingTime: preferences.meetingTime,
+      availability: 'Today, Evening',
+      interests: preferences.interests.isEmpty
+          ? const {
+              MatchInterest.tech,
+              MatchInterest.travel,
+              MatchInterest.music,
+            }
+          : preferences.interests,
+    );
   }
 }

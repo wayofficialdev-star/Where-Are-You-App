@@ -1,4 +1,9 @@
-export 'find_someone_card.dart';
+export 'activity_section.dart';
+export 'home_backdrop.dart';
+export 'home_body.dart';
 export 'home_header.dart';
-export 'meeting_history.dart';
-export 'profile_progress_card.dart';
+export 'home_stats_card.dart';
+export 'match_cta_card.dart';
+export 'recent_meetups.dart';
+export 'safety_notice.dart';
+export 'time_filter_row.dart';

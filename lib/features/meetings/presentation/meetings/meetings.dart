@@ -3,6 +3,7 @@ import 'package:app/l10n/l10n.dart';
 import 'package:app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hancod_theme/hancod_theme.dart';
 
 class MeetingsScreen extends ConsumerWidget {
@@ -21,9 +22,35 @@ class MeetingsScreen extends ConsumerWidget {
           child: ListView(
             padding: const EdgeInsets.fromLTRB(20, 24, 20, 32),
             children: [
-              Text(
-                context.l10n.meetings,
-                style: AppText.heading4.copyWith(color: WhereRuBrand.navy),
+              // Meetings is reached from Home's history link, not a bottom
+              // tab, so it needs its own way back.
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () => context.go(AppRouter.homePath),
+                    tooltip: context.l10n.back,
+                    padding: EdgeInsets.zero,
+                    visualDensity: VisualDensity.compact,
+                    constraints: const BoxConstraints(
+                      minWidth: 34,
+                      minHeight: 34,
+                    ),
+                    icon: const Icon(
+                      Icons.arrow_back_ios_new_rounded,
+                      size: 17,
+                      color: WhereRuBrand.navy,
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: Text(
+                      context.l10n.meetings,
+                      style: AppText.heading4.copyWith(
+                        color: WhereRuBrand.navy,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 6),
               Text(

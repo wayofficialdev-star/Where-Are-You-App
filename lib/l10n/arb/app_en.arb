@@ -63,5 +63,243 @@
     }
   },
   "noMeetingsYet": "Your meetings will show up here.",
-  "backendNotConnected": "This action will be available once the backend is connected."
+  "backendNotConnected": "This action will be available once the backend is connected.",
+  "signUpTitleLead": "Create Your",
+  "signUpTitleAccent": "Account",
+  "signUpSubtitle": "Join Where R U and start making new friends nearby.",
+  "fullNameLabel": "Full Name",
+  "emailLabel": "Email Address",
+  "passwordLabel": "Password",
+  "locationLabel": "Your Location (Optional)",
+  "signUpAction": "Sign Up",
+  "orContinueWith": "Or continue with",
+  "alreadyHaveAccount": "Already have an account?",
+  "logInAction": "Log In",
+  "back": "Back",
+  "continueWithGoogle": "Continue with Google",
+  "continueWithApple": "Continue with Apple",
+  "continueWithFacebook": "Continue with Facebook",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password",
+  "fullNameRequired": "Enter your full name",
+  "emailRequired": "Enter your email address",
+  "emailInvalid": "Enter a valid email address",
+  "passwordRequired": "Enter a password",
+  "passwordTooShort": "Use at least 8 characters",
+  "logInComingSoon": "Log in will be available once authentication is connected.",
+  "goodMorning": "Good morning, {name}! 👋",
+  "@goodMorning": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "readyToMakeAPlan": "Ready to make a plan?",
+  "matches": "Matches",
+  "chat": "Chat",
+  "findAMatch": "Find a Match",
+  "findAMatchSubtitle": "Find someone nearby who's up for the same thing, right now.",
+  "rightNow": "Right now",
+  "withinOneHour": "Within 1 hour",
+  "laterToday": "Later today",
+  "scheduledTime": "Scheduled time",
+  "coins": "Coins",
+  "meetups": "Meetups",
+  "score": "Score",
+  "redeem": "Redeem",
+  "whatAreYouUpFor": "What are you up for?",
+  "activityTeaCoffee": "Tea / Coffee",
+  "activityMovies": "Movies",
+  "activityDinner": "Dinner",
+  "activityWalks": "Walks",
+  "activityGamesSports": "Games & Sports",
+  "activityExploreKochi": "Explore Kochi",
+  "activityEvents": "Events",
+  "activityStudyTogether": "Study Together",
+  "activityCafe": "Cafe",
+  "activityMore": "More",
+  "recentMeetups": "Recent meetups",
+  "viewHistory": "View history",
+  "distanceKm": "{distance} km",
+  "@distanceKm": {
+    "placeholders": {
+      "distance": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
+  },
+  "ratingSummary": "{rating} ({label})",
+  "@ratingSummary": {
+    "placeholders": {
+      "rating": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "ratingGreat": "Great!",
+  "ratingGood": "Good",
+  "safetyNotice": "Approximate distance only · Meet in public places",
+  "aiGreetingTitle": "Hi {name}! 👋",
+  "@aiGreetingTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "aiGreetingBody": "What would you like to do today? I'll find the right person for you.",
+  "activityGaming": "Gaming",
+  "activityShopping": "Shopping",
+  "aiInterestsPrompt": "Great! What are you interested in talking about? You can select multiple options.",
+  "interestTech": "Tech",
+  "interestBusiness": "Business",
+  "interestSports": "Sports",
+  "interestTravel": "Travel",
+  "interestMusic": "Music",
+  "interestFood": "Food",
+  "interestMovies": "Movies",
+  "interestGaming": "Gaming",
+  "interestBooks": "Books",
+  "interestArt": "Art",
+  "interestOther": "Other",
+  "next": "Next",
+  "aiDistancePrompt": "How far would you like to meet someone?",
+  "upToDistance": "Up to {distance} km",
+  "@upToDistance": {
+    "placeholders": {
+      "distance": {
+        "type": "int"
+      }
+    }
+  },
+  "distanceTick": "{distance} km",
+  "@distanceTick": {
+    "placeholders": {
+      "distance": {
+        "type": "int"
+      }
+    }
+  },
+  "aiTimePrompt": "When are you planning to meet?",
+  "timeNow": "Now",
+  "timeToday": "Today",
+  "timeThisWeek": "This Week",
+  "timeAnytime": "Anytime",
+  "aiNotePrompt": "Anything else I should know? (Optional)",
+  "noteHint": "Example: casual conversation,\nnew in city, open to group meetups etc.",
+  "noteCounter": "{count}/100",
+  "@noteCounter": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "findSomeoneCta": "Find Someone",
+  "matchingTitleLine1": "Finding the right",
+  "matchingTitleLine2Lead": "person ",
+  "matchingTitleLine2Accent": "for you...",
+  "matchingSubtitle": "Our AI is finding someone who also wants to go for {activity} and matches your interests.",
+  "@matchingSubtitle": {
+    "placeholders": {
+      "activity": {
+        "type": "String"
+      }
+    }
+  },
+  "matchingStepInterests": "Finding people with similar interests",
+  "matchingStepDistance": "Checking distance (within {distance} km)",
+  "@matchingStepDistance": {
+    "placeholders": {
+      "distance": {
+        "type": "int"
+      }
+    }
+  },
+  "matchingStepAvailability": "Matching availability",
+  "matchingStepAlmost": "Almost there...",
+  "matchFoundTitle": "We found someone for you!",
+  "matchFoundSubtitle": "You both want to go for {activity}, share similar interests and are nearby.",
+  "@matchFoundSubtitle": {
+    "placeholders": {
+      "activity": {
+        "type": "String"
+      }
+    }
+  },
+  "approxDistance": "~{distance} km",
+  "@approxDistance": {
+    "placeholders": {
+      "distance": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
+  },
+  "approxDistanceAway": "~{distance} km away",
+  "@approxDistanceAway": {
+    "placeholders": {
+      "distance": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
+  },
+  "ageCityLine": "{age} • {city}",
+  "@ageCityLine": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      },
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "wantsToGoFor": "Wants to go for",
+  "commonInterests": "Common Interests",
+  "connectNow": "Connect Now",
+  "tryAnotherMatch": "Try Another Match",
+  "noMatchYet": "No match yet. Adjust your preferences and try again.",
+  "chatOnlineNow": "Online now",
+  "chatTodayEvening": "Today, Evening",
+  "chatToday": "Today",
+  "chatMatchedFor": "You matched for {activity}",
+  "@chatMatchedFor": {
+    "placeholders": {
+      "activity": {
+        "type": "String"
+      }
+    }
+  },
+  "chatMatchBannerSubtitle": "Feel free to chat and plan together!",
+  "chatViewMatchDetails": "View Match Details",
+  "chatMessageHint": "Type a message...",
+  "chatSendUnavailable": "Messaging will be available once the backend is connected.",
+  "chatCallUnavailable": "Calling will be available once the backend is connected.",
+  "chatCall": "Call",
+  "chatAddAttachment": "Add attachment",
+  "chatEmoji": "Emoji",
+  "chatImage": "Image",
+  "chatSend": "Send voice message",
+  "chatConversationOptions": "Conversation options",
+  "chatBlockReport": "Block & report"
 }

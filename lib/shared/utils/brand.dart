@@ -23,7 +23,50 @@ abstract final class WhereRuBrand {
     colors: [blue, purple, pink],
   );
 
-  static const List<Color> pastels = [pastelBlue, pastelPurple, pastelPink];
+  static const Color pastelPeach = Color(0xFFFFF0E4);
+  static const Color pastelMint = Color(0xFFE6F8F0);
+  static const Color pastelLavender = Color(0xFFF2EEFF);
+
+  static const List<Color> pastels = [
+    pastelBlue,
+    pastelPurple,
+    pastelPink,
+    pastelMint,
+    pastelPeach,
+  ];
+
+  /// Hairline used for card borders and in-card dividers.
+  static const Color hairline = Color(0xFFEDEFF5);
+
+  /// Rating stars, notification badges and the redeem highlight.
+  static const Color star = Color(0xFFFBBF24);
+  static const Color danger = Color(0xFFF04438);
+  static const Color reward = Color(0xFFE84393);
+
+  static const Color coral = Color(0xFFFF8A5C);
+  static const Color facebook = Color(0xFF1877F2);
+
+  /// Auth surfaces: near-white field fill, hairline border, muted icon/hint.
+  static const Color fieldFill = Color(0xFFF9FAFD);
+  static const Color fieldBorder = Color(0xFFE3E6EF);
+  static const Color fieldIcon = Color(0xFF565C6B);
+  static const Color hint = Color(0xFF6E7488);
+  static const Color body = Color(0xFF5B6280);
+
+  /// Violet → pink → coral, used for the highlighted heading word.
+  static const LinearGradient accentGradient = LinearGradient(
+    colors: [Color(0xFF8B5CF6), Color(0xFFFF4FA3), coral],
+  );
+
+  /// Indigo → violet, used for the selected time filter pill.
+  static const LinearGradient selectedPillGradient = LinearGradient(
+    colors: [Color(0xFF4A63F0), Color(0xFF8B4FF0)],
+  );
+
+  /// Call-to-action gradient: azure → violet → magenta → coral.
+  static const LinearGradient ctaGradient = LinearGradient(
+    colors: [Color(0xFF3FA2FF), Color(0xFF6B5BFF), Color(0xFFE93FC1), coral],
+  );
 
   /// Soft, rounded surface used by the Where RU cards.
   static BoxDecoration cardDecoration({
